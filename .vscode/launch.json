@@ -1,0 +1,36 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "run train_model.py",
+			"type": "python",
+			"request": "launch",
+			"program": "${workspaceFolder}/src/mtl_cluster/train_model.py",
+			"console": "integratedTerminal",
+			"justMyCode": false,
+			"subProcess": true,
+			"env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "PYDEVD_DISABLE_FILE_VALIDATION": "0",
+				"WANDB_MODE": "offline"
+      }
+		},
+		{
+      "name": "Current file",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "subProcess": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "PYDEVD_DISABLE_FILE_VALIDATION": "0",
+				"WANDB_MODE": "offline"
+      }
+		},
+		]
+}

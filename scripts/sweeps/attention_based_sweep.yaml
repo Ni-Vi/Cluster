@@ -1,0 +1,68 @@
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args}
+entity: lewidi
+method: bayes
+metric:
+  goal: minimize
+  name: val_loss
+name: Buffalo MBIC
+
+parameters:
+  ann_dim_factor:
+    values:
+      - 1
+      - 2
+      - 4
+      - 6
+
+  dataset:
+    values:
+      # possible dataset args = "Anon", "GWSD", "MBIC", Babe
+
+      - MBIC
+      # - Babe
+
+  decoder_depth:
+    distribution: int_uniform
+    max: 16
+    min: 2
+
+  decoder_heads:
+    values:
+      - 2
+      - 4
+      - 8
+      - 16
+
+  downsample_num_layers:
+    values:
+      - 0
+      - 1
+      - 2
+      - 3
+
+  dropout:
+    distribution: uniform
+    max: 0.3
+    min: 0
+
+  learning_rate:
+    distribution: uniform
+    max: 0.0001
+    min: 1e-08
+
+  model:
+    values:
+      # possible model args = "cross_attention_unpooled", "cross_attention_pooled", "encoder_encoder_unpooled", "encoder_encoder_pooled"
+      - cross_attention_pooled
+
+  num_warmup_steps:
+    distribution: int_uniform
+    max: 800
+    min: 0
+
+program: src/mtl_cluster/train_model.py
+project: cluster

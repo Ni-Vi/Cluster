@@ -1,0 +1,21 @@
+defaults:
+  - paths: default
+  - trainer: gpu
+  - callbacks: default
+  - loggers: wandb
+
+seed: 12345
+
+train: true
+val: true
+checkpoint_path: null
+
+trainer:
+  devices: [1]
+
+logger:
+  wandb:
+    name: cluter
+    offline: False
+    group: "cluster"
+    tags: ${tags}

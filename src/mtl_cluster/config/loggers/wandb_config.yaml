@@ -1,0 +1,13 @@
+wandb:
+  _target_: pytorch_lightning.loggers.wandb.WandbLogger
+  save_dir: "${paths.output_dir}"
+  offline: False
+  # id: null # pass correct id to resume experiment!
+
+  entity: "cluter"
+  project: "cluster"
+
+  log_model: False # upload lightning ckpts
+  group: ""
+  tags: []
+  job_type: ""

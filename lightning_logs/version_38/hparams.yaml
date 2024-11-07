@@ -1,0 +1,4 @@
+backbone_lr: 2.0e-05
+mpath: sentence-transformers/paraphrase-MiniLM-L12-v2
+task_head_lr: 0.002
+weight_decay: 0.0001

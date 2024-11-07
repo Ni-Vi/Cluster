@@ -1,0 +1,83 @@
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args}
+entity: lewidi
+method: bayes
+metric:
+  goal: maximise
+  name: this_number_needs_to_be_1
+
+name: MBIC hopes and dream
+
+parameters:
+  dataset_name:
+    values:
+      - MBIC
+      # - Babe
+      # - Anon
+      # - GWSD
+  model:
+    values:
+      # - decoder_only
+      - encoder_decoder_pretrained
+      # - classifier
+      # - cross_attention_pooled
+      # - encoder_encoder
+      # - cross_attention_unpooled
+
+  dimensionality_reduction:
+    values:
+      - umap
+
+  normalize_after_reduction:
+    values:
+      - True
+      - False
+
+  clustering_method:
+    values:
+      - kmeans
+      - hdbscan
+      - agglomerative
+
+  hdbscan_eps :
+    distribution: uniform
+    min: 0.0
+    max: 1.0
+
+  hdbscan_min_samples:
+    distribution: int_uniform
+    min: 2
+    max: 100
+
+  hdbscan_min_cluster_size:
+    distribution: int_uniform
+    min: 2
+    max: 100
+
+  agglomerative_n_clusters:
+    distribution: int_uniform
+    min: 3
+    max: 20
+
+  agglomerative_distance_threshold:
+    distribution: uniform
+    min: 0.0
+    max: 1.0
+
+  umap_n_neighbors:
+    distribution: int_uniform
+    min: 15
+    max: 100
+
+  umap_min_dist:
+    distribution: uniform
+    min: 0.01
+    max: 0.99
+
+  umap_n_components:
+    distribution: int_uniform
+      - 2
+      - 300
